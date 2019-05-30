@@ -10,8 +10,11 @@ let gifs =[]
 axios.get("https://api.giphy.com/v1/gifs/search?api_key=O5LyiGH753b9EWs8TEN6LL0DLtx8wqNm&q=cat&limit=25&offset=0&rating=G&lang=en").then((response)=> {
     gifs = response.data.data.map((value,index)=>{
 
-        return(<li><img src= {value.images['480w_still'].url}/></li>
+        return(
 
+        <div >
+          <li><img className ="col-4 shadow p-3 mb-5 bg-info rounded" src= {value.images['480w_still'].url}/></li>
+        </div>
         )
 
     })
